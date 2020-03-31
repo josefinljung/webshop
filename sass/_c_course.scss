@@ -1,0 +1,32 @@
+.dropdown {
+    margin-left: 15px;
+    .inputlong {
+        text-align: left;
+    } 
+    .imgdropdown {
+        height: 15px;
+    }
+    .weeks {
+        margin-left: 10px;
+    }
+    .buttonblue {
+        margin-left: 10px;
+    }
+}
+.imgend{
+    text-align: end;
+    overflow: hidden;
+    .productimg{
+        height: 100%;
+    }
+}
+.paginationbtn{
+    background: none;
+    border: none;
+    width: 40px;    
+    margin-bottom: 4px;
+    .pagetxt :active{
+         font-weight: bold;
+     }
+    
+}

@@ -1,0 +1,79 @@
+// First page med video
+.navbarfirstpage {
+    position: absolute;
+    z-index: 10;
+
+    .navlinksfirstpage {
+        padding-top: 30px;
+        text-align: end;
+
+        @include tablet {
+            padding-top: 30px;
+            padding-left: 50px;
+        }
+
+        @include desktop {
+            padding-top: 35px;
+
+        }
+    }
+}
+
+.firstpageimg {
+    display: block;
+    background-image: url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 90%;
+
+
+    @include tablet {
+        display: none;
+    }
+
+    .firstpagetextmobile {
+        margin-top: 40%;
+        padding: 15px;
+        color: $white;
+        text-align: center;
+    }
+}
+
+.firstpagevideo {
+    display: none;
+    background-image: url("https://images.unsplash.com/photo-1510777554755-dd3dad5980ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+
+    @include tablet {
+        display: block;
+    }
+
+    .firstpagetextdesktop {
+        margin-top: 35%;
+        padding-left: 30px;
+        padding-right: 30px;
+        color: $white;
+        text-align: center;
+
+
+        @include desktop {
+            margin-top: 25%;
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+
+        @include desktopxl {
+            margin-top: 15%;
+            padding-left: 250px;
+            padding-right: 250px;
+        }
+    }
+}
+
+.firsttxt {
+    color: white;
+}

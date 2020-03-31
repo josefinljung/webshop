@@ -1,0 +1,59 @@
+<%- include("../partial/adminheader.ejs") %>
+
+<div class="row justify-content-center" id="title_admin">
+    <div class="col-12 col-md-7 col-lg-5">
+        <h1>ADD PRODUCTS</h1>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-7 col-lg-5" id="centercontainer">
+        <div class="row" id="contentform">
+            <div class="col-12">
+                <form action="/admin/addproduct" method="POST">
+                    <div class="row row_admin">
+                        <div class="col-12">
+                            <select class="inputdropdown" id="sel1" name="country" placeholder="Select country">
+                                <option value="Sri Lanka">Sri Lanka</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row row_admin">
+                        <div class="col-12">
+                            <input class="form-control inputlong_admp" placeholder="Title" name="title" id="title">
+                        </div>
+                    </div>
+                    <div class="row row_admin">
+                        <div class="col-12">
+                            <input class="form-control inputlong_admp" type="text" name="description"
+                                placeholder="Description" id="description" maxlength="200">
+                        </div>
+                    </div>
+                    <div class="row row_admin">
+                        <div class="col-6">
+                            <input class="form-control inputshort_admp" placeholder="Price" name="price" id="price">
+                        </div>
+                        <div class="col-6">
+                            <input class="form-control inputshort_admp" placeholder="Quantity" name="quantity"
+                                id="quantity">
+                        </div>
+                    </div>
+                    <div class="row row_admin">
+                        <div class="custom-file col-sm-12">
+                            <input type="text" class="form-control inputlong_admp" placeholder="Image-url" name="image">
+                        </div>
+                    </div>
+                    <div class="row row_admin">
+                        <div class="col-12">
+                            <button class="buttonblue" type="submit">Add</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include("../partial/adminfooter.ejs") %>

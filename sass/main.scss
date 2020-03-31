@@ -1,0 +1,36 @@
+// Import from all SCSS files:
+
+// IMPORT ADMIN \\
+@import "admin_add_edit";
+@import "Aorders";
+@import "Aproducts";
+
+// IMPORT CUSTOMER \\
+@import "c_checkout";
+@import "c_course";
+@import "c_firstpage_video";
+@import "c_orders";
+@import "c_thankyou";
+
+// SAME FOR BOTH \\
+@import "login_signup";
+@import "mixins";
+@import "primary";
+@import "sameforall";
+@import "settings";
+@import "variables";
+
+// @import "c_checkout.scss";
+// @import "c_firstpage_video.scss";
+// @import "admin_add_edit.scss";
+// @import "mixins.scss"; 
+// @import "sameforall.scss";  
+// @import "login_signup.scss";
+// @import "variables.scss";
+// @import "primary.scss";
+// @import "Aproducts.scss";
+// @import "Aorders.scss";
+// @import "c_orders.scss";
+// @import "welcome.scss"; 
+// @import "c_course.scss";
+// @import "settings.scss";

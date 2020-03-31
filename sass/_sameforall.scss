@@ -1,0 +1,123 @@
+a {
+    color: $fontcolor;
+    font-weight: 400;
+    margin-right: 25px;
+}
+
+.inputshort {
+    font-weight: 300;
+    height: 33px;
+    background: $background;
+    border: 1px solid $dark;
+    border-radius: 0;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.inputlongreset {
+    font-weight: 300;
+    height: 33px;
+    width: 100%;
+    background: $background;
+    border: 1px solid $dark;
+    border-radius: 0;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.inputlong {
+    font-weight: 300;
+    height: 33px;
+    background: $background;
+    border: 1px solid $dark;
+    border-radius: 0;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.dropdownlong {
+    font-weight: 300;
+    width: 360px;
+    height: 33px;
+    background: $background;
+    border: 1px solid $dark;
+    border-radius: 0;
+}
+
+.buttonblue {
+    width: 171px;
+    height: 33px;
+    background: $blue;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.buttongreen {
+    width: 171px;
+    height: 33px;
+    background: $green;
+    border-radius: 6px;
+}
+
+.buttonyellow {
+    width: 171px;
+    height: 33px;
+    background: $yellow;
+    border-radius: 6px;
+}
+
+.buttonred {
+    width: 171px;
+    height: 33px;
+    background: $red;
+    border-radius: 6px;
+}
+
+.errorMessage {
+    color: $red;
+}
+
+.container-fluid {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+.logoimg {
+    height: 70px;
+    // width: 70px;
+}
+
+.basketlogo {
+    margin-top: 20px;
+    height: 35px;
+}
+
+.arrowleft {
+    height: 58px;
+}
+
+.arrowright {
+    height: 58px;
+}
+
+.arrowdown {
+    height: 58px;
+}
+
+.arrowup {
+    height: 58px;
+}
+
+.smallimg {
+    width: 30px;
+}
+
+
+.loggedinctn {
+    width: 100px;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    text-align: center;
+}

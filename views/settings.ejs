@@ -1,0 +1,56 @@
+<%- include("./partial/customerheader.ejs") %>
+
+
+<div class="row justify-content-center" id="title_admin">
+    <div class="col-12 col-md-7 col-lg-5">
+        <h1>SETTINGS</h1>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-12 col-md-7 col-lg-5">
+
+        <form action="/admin/createproducts" method="POST">
+            <div class="row">
+                <input type="text" value="" class="inputshort" id="id" name="_id" placeholder="" hidden>
+                <div class="col">
+                    <input class="form-control inputshort" placeholder="First Name" id="fname">
+                </div>
+                <div class="col">
+                    <input class="form-control inputshort" placeholder="Last Name" id="lname">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input class="form-control inputlong" placeholder="Email" id="email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input class="form-control inputlong" type="text" placeholder="Address" id="address">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input class="form-control inputshort" placeholder="Zip code" id="zipcode">
+                </div>
+                <div class="col">
+                    <input class="form-control inputshort" placeholder="City" id="city">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input class="form-control inputshort" placeholder="Password" id="password">
+                </div>
+                <div class="col">
+                    <input class="form-control inputshort" placeholder="Confirm Password" id="confpassword">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-12 col-md-12 centerdiv">
+                    <button class="buttonblue" type="submit">UPDATE</button>
+                </div>
+            </div>
+
+        </form>
+
+<%- include("./partial/customerfooter.ejs") %>

@@ -1,0 +1,82 @@
+<%- include("../partial/adminheader.ejs") %>
+
+<div class="row justify-content-center" id="title_admin">
+	<div class="col-12 col-md-7 col-lg-12">
+		<h1>PRODUCTS<a href="/admin/addproduct">
+				<img src="/images/plus.svg" class="addicon">
+			</a>
+		</h1>
+	</div>
+</div>
+<div class="container ctnorderproduct">
+	<div class="row">
+		<div class="col-12">
+			<table class="table table-image table-striped">
+				<thead>
+					<tr>
+						<th scope="row">
+						<th scope="col">
+							<P>COUNTRY</P>
+						</th>
+						<th scope="col">
+							<P>TITLE</P>
+						</th>
+						<th scope="col">
+							<P>DESCRIPTION</P>
+						</th>
+						<th scope="col">
+							<P>PRICE</P>
+						</th>
+						<th scope="col">
+							<P>EDIT</P>
+						</th>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% fiveProducts.forEach((products) => { %>
+					<tr>
+						<th scope="row">
+						<td class="w-15">
+							<p><%=products.country %></p>
+						</td>
+
+						<td class="w-15">
+							<p><%=products.title %></p>
+						</td>
+						<td class="w-15">
+							<p><%=products.description %></p>
+						</td>
+						<td class="w-15">
+							<p><%=products.price %></p>
+						</td>
+						<td class="w-15">
+							<a href="/admin/editproduct/<%=products._id%>"><img src="/images/edit.svg" alt="edit"
+									class="img-fluid img-thumbnail smallimg"></a>
+							<a href="/admin/delete/<%=products._id%>"><img src="/images/delete.svg" alt="delete"
+									class="img-fluid img-thumbnail smallimg"></a>
+						</td>
+						</th>
+					</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 ">
+			<% for(let page=1; page <= pagesCount && pagesCount > 1; page++ ) { %>
+			<% if (currentPage === page) { %>
+			<a href="/admin/products/?page=<%=page%>"><button class="pages"><span
+						class="pagetxt"><%=page%></span></button></a>
+			<% } else { %>
+			<a href="/admin/products/?page=<%=page%>"><button class="pages">
+					<span><%=page%></span>
+				</button></a>
+			<%  } %>
+			<% } %>
+		</div>
+	</div>
+</div>
+
+<%- include("../partial/adminfooter.ejs") %>

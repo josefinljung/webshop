@@ -1,0 +1,24 @@
+
+
+<div class="col-12 col-md-1 col sectionthree order-md-3">
+    <div class="row fullheight">
+        <div class="col-4 col-md-12 nextsideup">
+            
+        </div>
+        <div class="col-4 col-md-12 countrymenu-desktop">
+            <% for(let page=1; page <= pagesCount && pagesCount > 1; page++ ) { %>
+                <% if (currentPage === page) { %>
+                <a href="/course/?page=<%=page%>"><span class="pagetxt"><%= page %></span></a>
+                <% } else { %>
+                <a href="/course/?page=<%=page%>">
+                    <span><%= page %></span> 
+                </a>
+                <%  } %> 
+                <% } %>
+        </div>
+        <div class="col-4 col-md-12 nextsidedown">
+           
+
+        </div>
+    </div>
+</div>

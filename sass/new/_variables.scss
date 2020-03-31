@@ -1,0 +1,67 @@
+// Import font \\
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,800&display=swap');
+
+/* Variables */
+
+// Fonts \\ 
+$font: "Montserrat", ;
+
+// Colors \\
+$blue: #68C7C9;
+$red: #FF6948;
+$yellow: rgb(69, 61, 46);
+$green: #9AD187;
+$white: white;
+$dark: #979797;
+$fontcolor: #464646;
+$background: #F7F7F7;
+
+// Font-sizes \\
+h1 {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 35px;
+    line-height: 43px;
+    letter-spacing: 1.71667px;
+    margin-bottom: 33px;
+}
+
+h2 {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+    letter-spacing: 1.71667px;
+    margin-bottom: 33px;
+
+}
+
+h3 {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    letter-spacing: 1.71667px;
+    margin-bottom: 33px;
+}
+
+h4 {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 21px;
+    letter-spacing: 1.71667px;
+    margin-bottom: 33px;
+}
+
+p {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+}

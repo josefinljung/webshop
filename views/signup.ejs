@@ -1,0 +1,26 @@
+<%- include("./partial/maincheader.ejs") %>
+
+
+<div class="col-12 content slctn">
+    <form action="/signup" class="col-12" method="POST">
+        <h1 class="title">SIGN UP</h1>
+        <p class="errorMessage"><%= errorMessage %></p>
+        <div class="row justify-content-center">
+            <div class="col-8 col-md-8">
+                <div class="form-group">
+                    <input type="email" name="email" class="inputlong form-control" id="signUpEmail"
+                        placeholder="Email" />
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="inputlong form-control" id="signUpPassword"
+                        placeholder="Password" />
+                </div>
+                <p>By signing up you agree to our <b>terms of use</b> and<br> <b>privacy policy.</b> </p>
+                <button type="submit" id="SignUpBtn" class="buttonblue">SIGN UP</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<%- include("./partial/maincfooter.ejs") %>

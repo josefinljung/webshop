@@ -1,0 +1,22 @@
+// Import from all SCSS files \\
+
+// Admin \\
+
+// @import "a_admin.scss";
+@import "a_createproduct.scss";
+@import "a_editproduct.scss";
+@import "a_orders.scss";
+@import "a_productlist.scss";
+
+// Customer \\
+@import "c_checkout.scss";
+@import "c_course.scss";
+@import "c_landingpage.scss";
+@import "c_thankyou.scss";
+
+// Same for both admin and customer \\
+@import "login_signup.scss";
+@import "settings.scss";
+@import "menu.scss";
+@import "welcome.scss";
+@import "sameforall.scss";

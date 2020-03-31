@@ -1,0 +1,178 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.ctnorderproduct {
+    padding: 2rem 0rem;
+}
+
+.table-image {
+
+    td,
+    th {
+        vertical-align: middle;
+
+        .img-thumbnail {
+            width: 25px;
+        }
+    }
+}
+
+.ctnorderproduct {
+    padding: 2rem 0rem;
+}
+
+.table-image {
+
+    td,
+    th {
+        vertical-align: middle;
+
+        .img-thumbnail {
+            width: 25px;
+        }
+    }
+}
+
+#centercontainer {
+    text-align: center;
+
+    #contentform {
+        .row_admin {
+            margin-bottom: 8px;
+        }
+
+        #sel1 {
+            font-weight: 300;
+            width: 100%;
+            height: 33px;
+            background: $background;
+            border-style: 1px solid #979797;
+            border-radius: 0px;
+            -webkit-appearance: none;
+
+        }
+
+        .inputshort_admp {
+            font-weight: 300;
+            height: 33px;
+            background: $background;
+            border: 1px solid $dark;
+            border-radius: 0;
+            margin: 0 auto;
+            padding: 0 auto;
+        }
+
+        .inputlong_admp {
+            font-weight: 300;
+            height: 33px;
+            background: $background;
+            border: 1px solid $dark;
+            border-radius: 0;
+            margin: 0 auto;
+            padding: 0 auto;
+        }
+
+    }
+
+    #price {
+        @include tablet {
+            float: left;
+            margin-left: 2px;
+        }
+    }
+
+    #quantity {
+        @include tablet {
+            float: left;
+        }
+    }
+
+    .select-weeks {
+        width: 40%;
+
+        @include tablet {
+            width: 60%;
+        }
+
+        input {
+            display: none;
+        }
+    }
+
+    .week-label {
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        text-align: center;
+        border: 1px solid #ddd;
+        line-height: 34px;
+    }
+
+    #one:checked~label[for="one"],
+    #two:checked~label[for="two"],
+    #three:checked~label[for="three"],
+    #four:checked~label[for="four"] {
+        background: $blue;
+        color: #fff;
+    }
+
+    .form-inline {
+
+        .form-control {
+            margin: 20px;
+        }
+
+        h6 {
+            margin: 2px;
+        }
+
+        input.checkbox {
+            margin: 6px;
+        }
+    }
+
+    .custom-file {
+        width: 60%;
+        margin-top: 23px;
+
+        @include tablet {
+            width: 80%;
+            margin-top: 0px;
+        }
+
+        @include desktop {
+            width: 100%;
+        }
+
+        #customFile {
+            border-radius: 0px;
+        }
+
+        label.custom-file-label::after {
+            content: none;
+            border-radius: 0px;
+            -webkit-appearance: none;
+
+        }
+
+        .custom-file-label {
+            margin-top: 2px;
+            margin-right: 5px;
+            width: 60%;
+
+            @include tablet {
+                margin-top: 24px;
+                margin-right: 45px;
+
+                @include desktop {
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    .buttonblue {
+        margin-top: 10px;
+
+    }
+}

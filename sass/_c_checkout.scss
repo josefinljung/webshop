@@ -1,0 +1,98 @@
+.orderinformationborder {
+    @include desktop {
+        border-right: 0.5px $fontcolor solid;
+    }
+}
+
+.informationsection {
+    @include desktop {
+        border-right: 0.5px $fontcolor solid;
+    }
+}
+
+.logo-container {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.orderinformation {
+    background-color: $background;
+    padding: 15px;
+    margin: 0px 100px 0px 100px;
+
+    span {
+        display: block;
+    }
+
+    .ordername {
+        font-weight: 800;
+    }
+
+    .orderprice {
+        font-size: calc(110% + 0.25vw);
+        text-align: right;
+
+        .orderpricesek {
+            display: inline !important;
+            font-size: calc(50% + 0.25vw);
+        }
+    }
+}
+
+.informationsection,
+.paymentsection {
+    padding: 20px 120px 25px 120px;
+
+
+    .inputshortco {
+        font-weight: 300;
+        width: 100%;
+        height: 33px;
+        background: $background;
+        border: 1px solid $dark;
+        border-radius: 0;
+        padding: 0px 0px 0px 3px;
+    }
+
+    .inputlongco {
+        font-weight: 300;
+        width: 100%;
+        height: 33px;
+        background: $background;
+        border: 1px solid $dark;
+        border-radius: 0;
+        padding: 0px 0px 0px 3px;
+    }
+
+    h5 {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .gdpr {
+        text-align: right;
+        display: block;
+        font-size: calc(60% + 0.25vw);
+    }
+
+    .buttondiv {
+        text-align: right;
+
+    }
+
+    .paymentlogos {
+        padding-top: 5px;
+        text-align: right;
+
+        .paymentlogo {
+            height: 25px;
+        }
+    }
+}
+
+form {
+    div {
+        padding-bottom: 10px
+    }
+}

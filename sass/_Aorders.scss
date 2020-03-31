@@ -1,0 +1,31 @@
+#title_admin {
+    margin-top: 180px;
+    text-align: center;
+
+    #title_prod {
+        font-size: 30px;
+    }
+}
+
+#row_orders {
+    margin-top: 10px;
+    justify-content: space-between;
+
+    table {
+        thead th {
+            font-weight: 300;
+            font-family: $font;
+        }
+
+        font-family: $font;
+
+        .editproduct {
+            text-align: end;
+        }
+
+        .productEditDelete {
+
+            width: 4%;
+        }
+    }
+}
