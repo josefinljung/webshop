@@ -94,11 +94,11 @@ router.get(userROUTE.course, async (req, res) => {
 
 // customer checkout \\
 
-// router.get(userROUTE.checkout, verifyToken, async (req, res) => {
-//     const user = await User.findOne({_id:req.body.user._id}).populate("checkout.productId")
-//     console.log(user)
-//     res.render(userVIEW.checkout, {user});
-// });
+router.get(userROUTE.checkout, verifyToken, async (req, res) => {
+    const user = await User.findOne({_id:req.body.user._id}).populate("checkout.productId")
+    console.log(user)
+    res.render(userVIEW.checkout, {user});
+});
 
 router.get(userROUTE.checkoutid, verifyToken, async (req, res) => {
     const product = await productItem.findOne({_id:req.params.id})

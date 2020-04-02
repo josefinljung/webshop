@@ -69,7 +69,6 @@ userSchema.methods.addToCheckout = function (product) {
     return this.save()
 };
 
-// Remove from Checkout \\
 userSchema.methods.removeFromCheckOutList = function (productId) {
     const remainingcheckoutProducts = this.checkout.filter((product) => {
         return product.productId.toString() !==
