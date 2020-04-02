@@ -30,6 +30,8 @@ const userROUTE = {
     main: "/",
     course: "/course",
     checkout: "/checkout",
+    checkoutid: "/checkout/:id",
+    deletecheckout: "/deletecheckout/:id",
     login: "/login",
     signup: "/signup",
     welcome: "/welcome",
@@ -91,8 +93,26 @@ router.get(userROUTE.course, async (req, res) => {
 });
 
 // customer checkout \\
-router.get(userROUTE.checkout, (req, res) => {
-    res.render(userVIEW.checkout);
+
+// router.get(userROUTE.checkout, verifyToken, async (req, res) => {
+//     const user = await User.findOne({_id:req.body.user._id}).populate("checkout.productId")
+//     console.log(user)
+//     res.render(userVIEW.checkout, {user});
+// });
+
+router.get(userROUTE.checkoutid, verifyToken, async (req, res) => {
+    const product = await productItem.findOne({_id:req.params.id})
+    const user = await User.findOne({_id:req.body.user._id})
+    console.log(req.body.user)
+    await user.addToCheckout(product)
+    res.redirect(userROUTE.checkout);
+});
+
+router.get(userROUTE.deletecheckout, verifyToken, async (req, res) => {
+    const user = await User.findOne({_id:req.body.user._id})
+    
+    user.removeFromCheckOutList(req.params.id)
+    res.redirect(userROUTE.course);
 });
 
 
