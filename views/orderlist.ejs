@@ -1,0 +1,53 @@
+<%- include("./partial/customerheader.ejs") %>
+
+
+<div class="row justify-content-center" id="title_admin">
+    <div class="col-12 col-md-7 col-lg-5">
+        <h1>MY ORDERLIST</h1>
+    </div>
+</div>
+<% user.orderlist.forEach((product) => {%>
+<div class="row justify-content-center mb-2">
+    <div class="col-12 col-md-7 col-lg-6 backgroundrec">
+        <div class="row fullheight">
+            <% if(product.productId !== null) {%>
+
+            <div class="col-12 col-lg-6 imgctn">
+                <img src="<%=product.productId.image%>" class="orderimg" />
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="row titlectn">
+                    <div class="col-7">
+                        <h2><%= product.productId.title%> </h2>
+                    </div>
+                    <div class="col-5 textend">
+                        <h3><%= product.productId.price%> SEK</h3>
+                    </div>
+                    <div class="col-12">
+                        <a href="/deleteorderlist/<%=product.productId._id%>">Delete from my orderlist</a>
+                        <%}else{%>
+                        "product is not in store"
+                        <%}%> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% }) %>
+
+<div class="row justify-content-center">
+   <div class="col-3">
+        <button type="submit" class="buttonblue" id="confirmbtn">CONFIRM</button>
+   </div> 
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>                          
+<script>                             
+    var stripe = Stripe("pk_test_FgCykgLXpJrNw4jtan4iLsY900c406tDGQ");                             
+    document.querySelector("#confirmbtn").addEventListener("click", () => {                                 
+    stripe.redirectToCheckout({sessionId: "<%=sessionId%>"})                             
+    })                         
+</script>
+
+<%- include("./partial/customerfooter.ejs") %>

@@ -23,7 +23,7 @@ const userSchema = new Schema({
             ref: "Product"
         }
     }],
-    checkout: [{
+    orderlist: [{
         productId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Product"
@@ -54,27 +54,27 @@ userSchema.methods.removeFromList = function (productId) {
     return this.save()
 };
 
-// Add to Checkout \\
-userSchema.methods.addToCheckout = function (product) {
-    this.checkout.push({
+// Add to Orderlist \\
+userSchema.methods.addToOrderlist = function (product) {
+    this.orderlist.push({
         productId: product._id
     })
-    const newcheckout = this.checkout.filter(function ({
+    const neworderlist = this.orderlist.filter(function ({
         productId
     }) {
         return !this.has(`${productId}`) && this.add(`${productId}`)
 
     }, new Set)
-    this.checkout = [...newcheckout]
+    this.orderlist = [...neworderlist]
     return this.save()
 };
 
-userSchema.methods.removeFromCheckOutList = function (productId) {
-    const remainingcheckoutProducts = this.checkout.filter((product) => {
+userSchema.methods.removeFromOrderlist = function (productId) {
+    const remainingorderlistProducts = this.orderlist.filter((product) => {
         return product.productId.toString() !==
             productId.toString()
     })
-    this.checkout = remainingcheckoutProducts;
+    this.orderlist = remainingorderlistProducts;
     return this.save()
 };
 

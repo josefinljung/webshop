@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>checkout</title>
+    <title>WEB SURFERS</title>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
@@ -18,15 +18,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
-    <script src="https://js.stripe.com/v3/"></script>
-    <!-- <script>
-        var stripe = Stripe("pk_test_YdqKsq7KM50ZZyi98Os90Y3A000xvgdY8x");
-        document.querySelector("#paybtn").addEventListener("click", () => {
-            stripe.redirectCheckout({
-                sessionId: {"session_id"}
-            });
-        });
-    </script> -->
 </head>
 
 <body>
@@ -40,32 +31,22 @@
         </header>
 
         <div class="row">
-            <% user.checkout.forEach((product) => {%>
-
             <div class="col-sm-12 col-md-12 col-lg-6 orderinformationborder">
                 <div class="row orderinformation">
-                    <% if(product.productId) {%>
                     <div class="col-8">
-                        <span class="ordername"><%= product.productId.title %></span>
+                        <span class="ordername">Surf and Turf in Portugal</span>
+                        <span>4 weeks</span>
                     </div>
                     <div class="col-4 orderprice ml-auto">
-                        <%= product.productId.price %>
+                        8292
                         <span class="orderpricesek">
                             SEK
                         </span>
                     </div>
-                    <div class="col-10">
-                        <span class="country"><%= product.productId.country %></span>
-                    </div>
-                        <div class="col-2">
-                            <a href="/deletecheckout/<%=product.productId._id%>"><img src="/images/delete.svg" alt="delete"
-                            class="img-fluid img-thumbnail smallimg"></a>
-                    </div>
                 </div>
             </div>
-            <%};%> 
         </div>
-        <%});%> 
+
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-6 informationsection">
                 <div class="row">
@@ -112,17 +93,7 @@
                         <h5 class="title">PAYMENT</h5>
                     </div>
                 </div>
-                    <!-- <form id="payment-form">
-                        <div id="card-element" class="base"> -->
-                          <!-- Elements will create input elements here -->
-                        <!-- </div> -->
-                      
-                        <!-- We'll put the error messages in this element -->
-                        <!-- <div id="card-errors" role="alert" class="errorMessage"></div>
-                      
-                        <button id="submit" class="buttonblue">Pay</button>
-                    </form> -->
-                      <form>
+                <form>
                     <div class="row">
                         <div class="col-12">
                             <input type="text" class="inputlongco" id="cardno" name="cardno" placeholder="Card No."
@@ -140,23 +111,23 @@
                     <div class="row">
                         <div class="col-sm-12 col-m-12 col-lg-12">
                             <span class="gdpr">
-                                By completing the order you agree to our terms of purchase and privacy policy.
+                                By completing the order you agree to our
                             </span>
                             <span class="gdpr">
-                                accusantium doloremque laudantium, totam rem iam,
+                                terms of purchase and privacy policy.
                             </span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 buttondiv">
-                            <button type="submit" class="buttonblue" id="paybtn">PAY</button>
+                            <button type="submit" class="buttonblue">PAY</button>
                         </div>
                     </div>
                 </form>
                 <div class="row paymentlogos">
                     <div class="col-12">
-                        <img src="./images/mastercard.svg" alt="mastercard-logo" class="paymentlogo">
-                        <img src="./images/visa.svg" alt="visa-logo" class="paymentlogo">
+                        <img src="./images/mastercard-log.svg" alt="mastercard-logo" class="paymentlogo">
+                        <img src="./images/visa-logo.svg" alt="visa-logo" class="paymentlogo">
                     </div>
                 </div>
             </div>

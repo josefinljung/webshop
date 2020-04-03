@@ -10,6 +10,8 @@ const verifyToken = require("./verifyToken");
 const sendGridTransport = require("nodemailer-sendgrid-transport");
 const config = require("../config/config");
 
+const stripe = require("stripe")("sk_test_uSeL9jqR9N8VPhDpYvJqYqFF00drN8BgEa"); 
+
 
 // middleware  \\
 const router = express();
@@ -46,7 +48,11 @@ const userROUTE = {
     prodgenerator: "/prodgenerator",
     wishlist: "/wishlist",
     wishlistid: "/wishlist/:id",
-    deletewishlist: "/deletewishlist/:id"
+    deletewishlist: "/deletewishlist/:id",
+    orderlist: "/orderlist",
+    orderlistid: "/orderlist/:id",
+    deleteorderlist: "/deleteorderlist/:id",
+
 };
 
 const userVIEW = {
@@ -63,6 +69,7 @@ const userVIEW = {
     reset: "reset",
     resetform: "resetform",
     wishlist: "wishlist",
+    orderlist: "orderlist",
 
     prodgenerator: "/partial/prodgenerator"
 };
@@ -200,6 +207,48 @@ router.get(userROUTE.deletewishlist, verifyToken, async (req, res) => {
 
     user.removeFromList(req.params.id)
     res.redirect(userROUTE.wishlist);
+});
+
+// customer orderlist \\
+router.get(userROUTE.orderlist, verifyToken, async (req, res) => {
+    const user = await User.findOne({ _id: req.body.user._id }).populate("orderlist.productId")
+
+    return stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        line_items: user.orderlist.map((product) => {
+            return {
+                name: product.productId.title,
+                amount: product.productId.price * 100, //öre *100 = 1 kronor
+                quantity: 1,
+                currency: "sek"
+            }
+        }),
+        // :// = efter http  
+        //req.get("Host") = localhost eller heroku etc
+        // success_url: req.protocol + "://" + req.get("Host") + "/orderconfirmation",
+        // cancel_url: "http://localhost:8003/products"
+
+        // skriv in heroku adresserna
+        success_url: 'http://localhost:8003/', //vilken sida man ska skickas till vid köp
+        cancel_url: "http://localhost:8003/orderlist" // vilken sida man ska skickas till vad misslyckat köp 
+    }).then((session) => {
+        res.render(userVIEW.orderlist, { user, sessionId: session.id })
+    })
+});
+
+router.get(userROUTE.orderlistid, verifyToken, async (req, res) => {
+    const product = await productItem.findOne({ _id: req.params.id })
+    const user = await User.findOne({ _id: req.body.user._id })
+    console.log(req.body.user)
+    await user.addToOrderlist(product)
+    res.redirect(userROUTE.orderlist);
+});
+
+router.get(userROUTE.deleteorderlist, verifyToken, async (req, res) => {
+    const user = await User.findOne({ _id: req.body.user._id })
+
+    user.removeFromList(req.params.id)
+    res.redirect(userROUTE.orderlist);
 });
 
 // customer settings \\
