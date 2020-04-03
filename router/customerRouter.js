@@ -229,8 +229,8 @@ router.get(userROUTE.orderlist, verifyToken, async (req, res) => {
         // cancel_url: "http://localhost:8003/products"
 
         // skriv in heroku adresserna
-        success_url: 'http://localhost:8003/', //vilken sida man ska skickas till vid köp
-        cancel_url: "http://localhost:8003/orderlist" // vilken sida man ska skickas till vad misslyckat köp 
+        success_url: 'https://webshop-websurfers.herokuapp.com/', //vilken sida man ska skickas till vid köp
+        cancel_url: "https://webshop-websurfers.herokuapp.com/orderlist" // vilken sida man ska skickas till vad misslyckat köp 
     }).then((session) => {
         res.render(userVIEW.orderlist, { user, sessionId: session.id })
     })
